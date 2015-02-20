@@ -1,0 +1,13 @@
+CodeStyle for Roger Olasz 
+
+FileName:
+- PascalCase
+
+Variables:
+- snake_case
+
+Class Names:
+- PascalCase
+
+Method Names:
+- camelCase
