@@ -22,6 +22,31 @@ public:
 		y = -y;
 	}
 
+	Point2D operator+ (const Point2D& a) const
+	{
+		Point2D tmp;
+		tmp.x = x + a.x;
+		tmp.y = y + a.y;
+		return tmp;
+	}
+
+	Point2D operator+= (const Point2D& a) const
+	{
+		x = x += a.x;
+		y = y += a.y;
+	}
+
+	Point2D operator- (const Point2D& a) const
+	{
+		x = x - a.x;
+		y = y - a.y;
+	}
+
+	Point2D operator-= (const Point2D& a) const
+	{
+		x = x -= a.x;
+		y = y -= a.y;
+	}
 
 
 };
