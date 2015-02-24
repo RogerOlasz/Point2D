@@ -20,7 +20,7 @@ namespace UnitTest1
 			p2.x = 2.0f;
 			p2.y = 4.0f;
 
-			punt += p2;
+			punt -= p2;
 
 			
 		}
