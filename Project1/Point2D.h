@@ -34,6 +34,8 @@ public:
 	{
 		 x += a.x;
 		 y += a.y;
+
+		 return(*this);
 	}
 
 	Point2D operator- (const Point2D& a) const
@@ -48,6 +50,8 @@ public:
 	{
 		x = x -= a.x;
 		y = y -= a.y;
+
+		return(*this);
 	}
 
 
