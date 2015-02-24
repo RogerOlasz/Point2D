@@ -27,6 +27,11 @@ public:
 
 	}
 
+	String(const char* format, ...)
+	{
+
+	}
+
 	~String()
 	{
 		delete[] str;
