@@ -27,6 +27,15 @@ public:
 
 	}
 
+	~String()
+	{
+		delete[] str;
+	}
+
+	int len() const
+	{
+		return strlen(str);
+	}
 };
 
 #endif //__String_H__
