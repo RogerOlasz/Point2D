@@ -108,7 +108,6 @@ public:
 			}
 
 			else
-				Clear();
 
 			strcpy_s(str, len, string);
 		}
