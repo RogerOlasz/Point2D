@@ -1,4 +1,4 @@
-CodeStyle for Roger Olasz 
+CodeStyle for Roger Olasz.
 
 FileName:
 - PascalCase
