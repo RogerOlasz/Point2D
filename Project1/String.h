@@ -47,6 +47,8 @@ public:
 
 			if (res > 0)
 			{
+				Alloc(res + 1);
+				//Clean();
 				
 			}
 
@@ -87,7 +89,7 @@ public:
 		return false;
 	}
 
-	P2String& P2String::operator= (const P2String& string) 
+	const P2String& operator= (const P2String& string) 
 	{
 		str = new char[string.len];
 		strcpy_s(str, string.len, string.str);
@@ -95,13 +97,33 @@ public:
 		return(*this);
 	}
 
-	P2String& P2String::operator= (const char* string)
+	const P2String& operator= (const char* string)
 	{
-		Alloc(string.len);
-
 		if (string != NULL)
-		 strcpy_s(str, string.len, string.str);
+		{
+			if (strlen(string) + 1 > len)
+			{
+				delete[] str;
+				Alloc(strlen(string) + 1);
+			}
+
+			else
+				Clear();
+
+			strcpy_s(str, len, string);
+		}
+		else
+		{
+			Clear();
+		}
+
 		return (*this);
+
+	}
+
+	void Clear()
+	{
+		str[0] = '\0';
 	}
 
 private:
