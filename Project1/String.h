@@ -3,36 +3,36 @@
 
 #include <string.h>
 
-class String
+class P2String
 {
 public:
 	int len;
 	char* str;
 
-	String()
+	P2String()
 	{
 		len = 1;
 		str = new char[len];
 		str[0] = '\0';
 		
 	}
-	String(const char* strc)
+	P2String(const char* strc)
 	{
 		len = strlen(strc) + 1;
 		str = new char[len];
 		strcpy_s(str, len, strc);
 	}
-	String(const String& str)
+	P2String(const String& str)
 	{
 
 	}
 
-	String(const char* format, ...)
+	P2String(const char* format, ...)
 	{
 
 	}
 
-	~String()
+	~P2String()
 	{
 		delete[] str;
 	}
@@ -41,6 +41,17 @@ public:
 	{
 		return strlen(str);
 	}
+
+	bool operator== (const P2String& string) const
+	{
+		return strcmp(string.str, str) == 0;
+	}
+
+	bool operator== (const P2String& string) const
+	{
+		return strcmp(string.str, str) != 0;
+	}
+
 };
 
 #endif //__String_H__
