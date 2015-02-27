@@ -12,10 +12,19 @@ namespace UnitTest1
 		
 		TEST_METHOD(TestPoint2D)
 		{
-			Point2D punt;
+			Point2D punt,p2;
 
-			punt.setZero();
-			Assert::IsTrue(punt.isZero());
+			p2.x = 2.0f;
+			p2.y = 5.0f;
+
+			punt.x = 5.0f;
+			punt.y = 8.0f;
+
+			punt += p2;
+
+			return punt;
+
+			
 		}
 
 	};
