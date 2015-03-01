@@ -47,8 +47,8 @@ public:
 
 			if (res > 0)
 			{
-				Alloc(res + 1);
-				Clear();
+				alloc(res + 1);
+				clear();
 				
 			}
 
@@ -60,7 +60,7 @@ public:
 		delete[] str;
 	}
 
-	int len() const
+	int length() const
 	{
 		return strlen(str);
 	}
@@ -104,7 +104,7 @@ public:
 			if (strlen(string) + 1 > len)
 			{
 				delete[] str;
-				Alloc(strlen(string) + 1);
+				alloc(strlen(string) + 1);
 			}
 
 			else
@@ -113,21 +113,21 @@ public:
 		}
 		else
 		{
-			Clear();
+			clear();
 		}
 
 		return (*this);
 
 	}
 
-	void Clear()
+	void clear()
 	{
 		str[0] = '\0';
 	}
 
 private:
 
-	void Alloc(unsigned int memory_space)
+	void alloc(unsigned int memory_space)
 	{
 		len = memory_space;
 		str = new char[len];
