@@ -12,7 +12,25 @@ namespace UnitTest1
 		
 		TEST_METHOD(TestPoint2D)
 		{
-			
+			Point2D p1, p2;
+
+			p1.x = 5.0f;
+			p1.y = 2.0f;
+
+			p2.x = 1.0f;
+			p2.y = 4.0f;
+
+			p1 - p2;
+			p1 + p2;
+			p1 += p2;
+			p1 -= p2;
+			p1 == p2;
+			p1 != p2;
+
+			p1.distanceTo(p2);
+			p1.setZero();
+			p1.isZero();
+
 		}
 
 	};
