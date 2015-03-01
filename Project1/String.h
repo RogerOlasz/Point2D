@@ -48,7 +48,7 @@ public:
 			if (res > 0)
 			{
 				Alloc(res + 1);
-				//Clean();
+				Clear();
 				
 			}
 
