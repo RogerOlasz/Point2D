@@ -16,8 +16,7 @@ public:
 
 	P2String()
 	{
-		len = 1;
-		str = new char[len];
+		alloc(1);
 		str[0] = '\0';
 		
 	}
@@ -27,9 +26,11 @@ public:
 		str = new char[len];
 		strcpy_s(str, len, strc);
 	}
-	P2String(const P2String& str)
+	P2String(const P2String& strc)
 	{
-
+		len = strc.len;
+		str = new char[len];
+		strcpy_s(str, len, strc.str);
 	}
 
 	P2String(const char* format, ...)
@@ -48,9 +49,14 @@ public:
 			if (res > 0)
 			{
 				alloc(res + 1);
-				clear();
+				strcpy_s(str, len, tmp);
 				
 			}
+		if (len == 0)
+		{
+			alloc(1);
+			clear();
+		}
 
 		}
 	}
@@ -60,32 +66,42 @@ public:
 		delete[] str;
 	}
 
-	int length() const
+	char* getString() const
+	{
+		return str;
+	}
+
+	unsigned int capacity() const
+	{
+		return len;
+	}
+
+	unsigned int getLength() const
 	{
 		return strlen(str);
 	}
 
 	bool operator== (const P2String& string) const
 	{
-		return strcmp(string.str, str) == 0;
+		return strcmp(str, string.str) == 0;
 	}
 
 	bool operator== (const char* string) const
 	{
 		if (string != NULL)
-			return strcmp(string, str) == 0;
+			return strcmp(str, string) == 0;
 		return false;
 	}
 
 	bool operator!= (const P2String& string) const
 	{
-		return strcmp(string.str, str) != 0;
+		return strcmp(str, string.str) != 0;
 	}
 
 	bool operator!= (const char* string) const
 	{
 		if (string != NULL)
-			return strcmp(string, str) != 0;
+			return strcmp(str, string) != 0;
 		return false;
 	}
 
