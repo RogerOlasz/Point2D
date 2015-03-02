@@ -20,12 +20,12 @@ public:
 		str[0] = '\0';
 		
 	}
-	P2String(const char* strc)
+	/*P2String(const char* strc)
 	{
 		len = strlen(strc) + 1;
 		str = new char[len];
 		strcpy_s(str, len, strc);
-	}
+	}*/
 	P2String(const P2String& strc)
 	{
 		len = strc.len;
@@ -136,12 +136,54 @@ public:
 
 	}
 
+	const P2String& P2String::operator+= (const P2String &string)
+	{
+
+		char *str_tmp = str;
+		unsigned int len_tmp = len;
+		len = string.len + len_tmp;
+
+		char *tmp;
+		tmp = new char[len];
+		strcpy_s(tmp, len, str_tmp);
+		strcat_s(tmp, len, string.str);
+
+		delete[] str;
+		str = new char[len];
+		strcpy_s(str, len, tmp);
+		delete[] tmp;
+
+		return (*this);
+	}
+
+	const P2String& P2String::operator+= (const char *string)
+	{
+		if (string != NULL)
+		{
+			char *str_tmp = str;
+			unsigned int len_tmp = len;
+			len = strlen(string) + len_tmp + 1;
+
+			char *tmp;
+			tmp = new char[len];
+			strcpy_s(tmp, len, str_tmp);
+			strcat_s(tmp, len, string);
+
+			delete[] str;
+			str = new char[len];
+			strcpy_s(str, len, tmp);
+			delete[] tmp;
+		}
+		else
+			clear();
+
+		return (*this);
+	}
+
 	void clear()
 	{
 		str[0] = '\0';
 	}
-
-private:
 
 	void alloc(unsigned int memory_space)
 	{
