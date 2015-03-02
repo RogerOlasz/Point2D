@@ -20,10 +20,10 @@ namespace UnitTestP2String
 		TEST_METHOD(ConstrChar)
 		{
 			P2String s1("Hola");
-			char *p2 = "Roger";
-			P2String s2 = p2;
-			char *p3 = NULL;
-			P2String s3 = p3;
+			char *c2 = "Roger";
+			P2String s2 = c2;
+			char *c3 = NULL;
+			P2String s3 = c3;
 			P2String s4("%s %d %s", "Tinc", 18, "anys");
 
 			Assert::IsTrue(s1 == "Hola");
@@ -46,22 +46,22 @@ namespace UnitTestP2String
 		TEST_METHOD(SameChar)
 		{
 			P2String s1("Roger");
-			char *p1 = NULL;
-			char *p2 = "Roger";
+			char *c1 = NULL;
+			char *c2 = "Roger";
 
 			Assert::IsTrue(s1 == "Roger");
-			Assert::IsFalse(s1 == p1);
-			Assert::IsTrue(s1 == p2);
+			Assert::IsFalse(s1 == c1);
+			Assert::IsTrue(s1 == c2);
 		}
 		TEST_METHOD(NoSameChar)
 		{
 			P2String s1("Roger");
-			char *p1 = NULL;
-			char *p2 = "Roger Olasz";
+			char *c1 = NULL;
+			char *c2 = "Roger Olasz";
 
 			Assert::IsTrue(s1 != "Roger Olasz");
-			Assert::IsTrue(s1 != p1);
-			Assert::IsTrue(s1 != p2);
+			Assert::IsTrue(s1 != c1);
+			Assert::IsTrue(s1 != c2);
 		}
 		TEST_METHOD(EqualityString)
 		{
@@ -81,8 +81,8 @@ namespace UnitTestP2String
 		{
 			P2String s1("Roger");
 			P2String s2 = "Roger Olasz";
-			char *p = NULL;
-			P2String s3 = p;
+			char *c = NULL;
+			P2String s3 = c;
 			P2String s4 = "Roger";
 
 			Assert::IsTrue(s1 != s2);
@@ -105,8 +105,8 @@ namespace UnitTestP2String
 			P2String s1("Roger");
 			s1 += "OlaszFuentes";
 			Assert::IsTrue(s1 == "RogerOlaszFuentes");
-			char *p = NULL;
-			s1 += p;
+			char *c = NULL;
+			s1 += c;
 			Assert::IsTrue(s1 == "");
 		}
 		TEST_METHOD(PlusString)
