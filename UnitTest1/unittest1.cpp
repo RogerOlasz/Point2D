@@ -12,31 +12,31 @@ namespace UnitTest1
 
 		TEST_METHOD(OperatorPlus)
 		{
-			Point2D p1, p2;
+			Point2D p1, p2, p3;
 
 			p1.x = 5.0f;
 			p1.y = 2.0f;
 
 			p2.x = 1.0f;
-			p2.y = 4.0f;
+			p2.y = 5.0f;
 
-			p1 + p2;
+			p3 = p1 + p2;
 
-			Assert::IsTrue(p1.x == 7.0f && p1.y == 6.0f);
+			Assert::IsTrue(p3.x == 6.0f && p3.y == 7.0f);
 		}
 		TEST_METHOD(OperatorMinus)
 		{
-			Point2D p1, p2;
+			Point2D p1, p2, p3;
 
 			p1.x = 5.0f;
 			p1.y = 2.0f;
 
 			p2.x = 1.0f;
-			p2.y = 4.0f;
+			p2.y = 5.0f;
 
-			p1 - p2;
+			p3 = p1 - p2;
 
-			Assert::IsTrue();
+			Assert::IsTrue(p3.x == 4.0f && p3.y == -3.0f);
 		}
 		TEST_METHOD(OperatorPlusEqual)
 		{
@@ -46,11 +46,11 @@ namespace UnitTest1
 			p1.y = 2.0f;
 
 			p2.x = 1.0f;
-			p2.y = 4.0f;
+			p2.y = 5.0f;
 
 			p1 += p2;
 
-			Assert::IsTrue();
+			Assert::IsTrue(p1.x == 6.0f && p1.y == 7.0f);
 		}
 		TEST_METHOD(OperatorMinusEqual)
 		{
@@ -60,9 +60,11 @@ namespace UnitTest1
 			p1.y = 2.0f;
 
 			p2.x = 1.0f;
-			p2.y = 4.0f;
+			p2.y = 5.0f;
 
 			p1 -= p2;
+
+			Assert::IsTrue(p1.x == 4.0f && p1.y == -3.0f);
 		}
 		TEST_METHOD(OperatorEqual)
 		{
@@ -72,9 +74,11 @@ namespace UnitTest1
 			p1.y = 2.0f;
 
 			p2.x = 1.0f;
-			p2.y = 4.0f;
+			p2.y = 5.0f;
 
 			p1 == p2;
+
+			Assert::IsTrue(p1.x == p2.x && p1.y == p2.y);
 		}
 		TEST_METHOD(OperatorDifferent)
 		{
@@ -84,9 +88,11 @@ namespace UnitTest1
 			p1.y = 2.0f;
 
 			p2.x = 1.0f;
-			p2.y = 4.0f;
+			p2.y = 5.0f;
 
 			p1 != p2;
+
+			Assert::IsTrue(p1.x != p2.x && p1.y != p2.y);
 		}
 		TEST_METHOD(DistanceTo)
 		{
@@ -96,34 +102,33 @@ namespace UnitTest1
 			p1.y = 2.0f;
 
 			p2.x = 1.0f;
-			p2.y = 4.0f;
+			p2.y = 5.0f;
 
 			p1.distanceTo(p2);
+
+			Assert::IsTrue(p1.distanceTo(p2) == 5);
 		}
 		TEST_METHOD(TestisZero)
 		{
-			Point2D p1, p2;
+			Point2D p1;
 
-			p1.x = 5.0f;
-			p1.y = 2.0f;
-
-			p2.x = 1.0f;
-			p2.y = 4.0f;
+			p1.x = 0.0f;
+			p1.y = 0.0f;
 
 			p1.isZero();
+
+			Assert::IsTrue(p1.isZero() == true);
 		}
 		TEST_METHOD(TestsetZero)
 		{
-			Point2D p1, p2;
+			Point2D p1;
 
 			p1.x = 5.0f;
 			p1.y = 2.0f;
 
-			p2.x = 1.0f;
-			p2.y = 4.0f;
-
 			p1.setZero();
 
+			Assert::IsTrue(p1.x == 0.0f && p1.y == 0.0f);
 		}
 
 	};
