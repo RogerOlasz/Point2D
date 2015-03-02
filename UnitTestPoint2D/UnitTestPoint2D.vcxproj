@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9D9EC71C-411A-4C75-81E4-719FE2E749EE}</ProjectGuid>
+    <ProjectGuid>{0F583C34-1F15-4F58-9237-55421D296F48}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>UnitTestString</RootNamespace>
+    <RootNamespace>UnitTestPoint2D</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

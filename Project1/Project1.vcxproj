@@ -72,7 +72,7 @@
   <ItemGroup>
     <ClInclude Include="Log.h" />
     <ClInclude Include="Point2D.h" />
-    <ClInclude Include="String.h" />
+    <ClInclude Include="P2String.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

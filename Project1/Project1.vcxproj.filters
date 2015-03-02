@@ -31,7 +31,7 @@
     <ClInclude Include="Log.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="String.h">
+    <ClInclude Include="P2String.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
