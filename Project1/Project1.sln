@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project1", "Project1.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestPoint2D", "..\UnitTestPoint2D\UnitTestPoint2D.vcxproj", "{0F583C34-1F15-4F58-9237-55421D296F48}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestP2String", "..\UnitTestP2String\UnitTestP2String.vcxproj", "{09BD9F95-9152-46FE-A409-D11AF477B07E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{0F583C34-1F15-4F58-9237-55421D296F48}.Debug|Win32.Build.0 = Debug|Win32
 		{0F583C34-1F15-4F58-9237-55421D296F48}.Release|Win32.ActiveCfg = Release|Win32
 		{0F583C34-1F15-4F58-9237-55421D296F48}.Release|Win32.Build.0 = Release|Win32
+		{09BD9F95-9152-46FE-A409-D11AF477B07E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{09BD9F95-9152-46FE-A409-D11AF477B07E}.Debug|Win32.Build.0 = Debug|Win32
+		{09BD9F95-9152-46FE-A409-D11AF477B07E}.Release|Win32.ActiveCfg = Release|Win32
+		{09BD9F95-9152-46FE-A409-D11AF477B07E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
