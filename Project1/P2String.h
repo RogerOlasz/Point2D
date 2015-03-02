@@ -1,5 +1,5 @@
-#ifndef __String_H__
-#define __String_H__
+#ifndef __P2String_H__
+#define __P2String_H__
 
 #include <string.h>
 #include <stdlib.h>
@@ -193,4 +193,4 @@ public:
 
 };
 
-#endif //__String_H__
+#endif //__P2String_H__
