@@ -1,6 +1,8 @@
 #ifndef __Point2D_H__
 #define __Point2D_H__
 
+#include <math.h>
+
 class Point2D
 {
 public:
@@ -16,9 +18,17 @@ public:
 		return x == 0.0f && y == 0.0f;
 	}
 
-	int distanceTo()
+	float distanceTo(const Point2D& a)
 	{
+		Point2D tmp;
+		float distance;
 
+		tmp.x = (a.x - x)*(a.x - x);
+		tmp.y = (a.y - y)*(a.y - y);
+
+		distance = sqrt(tmp.x + tmp.y);
+		
+		return distance;
 	}
 
 	void Negate()
