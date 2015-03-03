@@ -102,7 +102,7 @@ public:
 	{
 		if (string != NULL)
 			return strcmp(str, string) != 0;
-		return false;
+		return true;
 	}
 
 	const P2String& operator= (const P2String& string) 
