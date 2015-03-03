@@ -10,9 +10,18 @@
 
 class P2String
 {
+private:
+		unsigned int len;
+		char* str;
+
+		void alloc(unsigned int memory_space)
+		{
+			len = memory_space;
+			str = new char[len];
+		}
+
 public:
-	unsigned int len;
-	char* str;
+	
 
 	P2String()
 	{
@@ -186,12 +195,6 @@ public:
 	void clear()
 	{
 		str[0] = '\0';
-	}
-
-	void alloc(unsigned int memory_space)
-	{
-		len = memory_space;
-		str = new char[len];
 	}
 
 };
