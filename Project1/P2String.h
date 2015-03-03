@@ -17,7 +17,7 @@ public:
 	P2String()
 	{
 		alloc(1);
-		str[0] = '\0';
+		clear();
 		
 	}
 	/*P2String(const char* strc)
