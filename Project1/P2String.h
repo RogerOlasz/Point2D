@@ -175,7 +175,10 @@ public:
 			delete[] tmp;
 		}
 		else
+		{
 			clear();
+		}
+			
 
 		return (*this);
 	}
