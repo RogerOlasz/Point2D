@@ -10,14 +10,23 @@
 
 class P2String
 {
+private:
+		unsigned int len;
+		char* str;
+
+		void alloc(unsigned int memory_space)
+		{
+			len = memory_space;
+			str = new char[len];
+		}
+
 public:
-	unsigned int len;
-	char* str;
+	
 
 	P2String()
 	{
 		alloc(1);
-		str[0] = '\0';
+		clear();
 		
 	}
 	/*P2String(const char* strc)
@@ -102,7 +111,7 @@ public:
 	{
 		if (string != NULL)
 			return strcmp(str, string) != 0;
-		return false;
+		return true;
 	}
 
 	const P2String& operator= (const P2String& string) 
@@ -175,7 +184,10 @@ public:
 			delete[] tmp;
 		}
 		else
+		{
 			clear();
+		}
+			
 
 		return (*this);
 	}
@@ -183,12 +195,6 @@ public:
 	void clear()
 	{
 		str[0] = '\0';
-	}
-
-	void alloc(unsigned int memory_space)
-	{
-		len = memory_space;
-		str = new char[len];
 	}
 
 };

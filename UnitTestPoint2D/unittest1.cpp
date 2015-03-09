@@ -76,9 +76,7 @@ namespace UnitTest1
 			p2.x = 1.0f;
 			p2.y = 5.0f;
 
-			p1 == p2;
-
-			Assert::IsTrue(p1.x == p2.x && p1.y == p2.y);
+			Assert::IsFalse(p1 == p2);
 		}
 		TEST_METHOD(OperatorDifferent)
 		{
@@ -104,8 +102,6 @@ namespace UnitTest1
 			p2.x = 1.0f;
 			p2.y = 5.0f;
 
-			p1.distanceTo(p2);
-
 			Assert::IsTrue(p1.distanceTo(p2) == 5);
 		}
 		TEST_METHOD(TestisZero)
@@ -114,8 +110,6 @@ namespace UnitTest1
 
 			p1.x = 0.0f;
 			p1.y = 0.0f;
-
-			p1.isZero();
 
 			Assert::IsTrue(p1.isZero() == true);
 		}

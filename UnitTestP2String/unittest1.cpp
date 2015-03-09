@@ -20,15 +20,17 @@ namespace UnitTestP2String
 		TEST_METHOD(ConstrChar)
 		{
 			P2String s1("Hola");
+<<<<<<< HEAD
 			char *c2 = "Roger";
 			P2String s2 = c2;
 			char *c3 = NULL;
 			P2String s3 = c3;
 			P2String s4("%s%d%s", "Tinc", 18, "anys");
+=======
+			P2String s4("%s%d%s", "Tinc ", 18, " anys");
+>>>>>>> origin/master
 
 			Assert::IsTrue(s1 == "Hola");
-			Assert::IsTrue(s2 == "Roger");
-			Assert::IsTrue(s3 == "");
 			Assert::IsTrue(s4 == "Tinc 18 anys");
 		}
 		TEST_METHOD(ConstrString)
@@ -72,8 +74,8 @@ namespace UnitTestP2String
 		}
 		TEST_METHOD(InequalityString)
 		{
-			P2String s1("Hello");
-			P2String s2("Hello, darling...");
+			P2String s1("Roger");
+			P2String s2("Roger Olasz");
 
 			Assert::IsTrue(s1 != s2);
 		}
@@ -82,10 +84,10 @@ namespace UnitTestP2String
 			P2String s1("Roger");
 			P2String s2 = "Roger Olasz";
 			char *c = NULL;
-			P2String s3 = c;
+			P2String s3;
+			s3 = c;
 			P2String s4 = "Roger";
 
-			Assert::IsTrue(s1 != s2);
 			Assert::IsTrue(s1 != s2);
 			Assert::IsTrue(s1 != s3);
 			Assert::IsTrue(s1 == s4);
