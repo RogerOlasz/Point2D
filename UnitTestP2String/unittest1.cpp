@@ -24,7 +24,7 @@ namespace UnitTestP2String
 			P2String s2 = c2;
 			char *c3 = NULL;
 			P2String s3 = c3;
-			P2String s4("%s %d %s", "Tinc", 18, "anys");
+			P2String s4("%s%d%s", "Tinc", 18, "anys");
 
 			Assert::IsTrue(s1 == "Hola");
 			Assert::IsTrue(s2 == "Roger");
