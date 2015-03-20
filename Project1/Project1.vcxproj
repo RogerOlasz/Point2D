@@ -73,7 +73,6 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="Point2D.h" />
     <ClInclude Include="P2String.h" />
-    <ClInclude Include="Point2DTemplate.h" />
     <ClInclude Include="Swap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
