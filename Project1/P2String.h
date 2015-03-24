@@ -158,9 +158,7 @@ public:
 		strcat_s(tmp, len, string.str);
 
 		delete[] str;
-		str = new char[len];
-		strcpy_s(str, len, tmp);
-		delete[] tmp;
+		str = tmp;
 
 		return (*this);
 	}
@@ -179,9 +177,7 @@ public:
 			strcat_s(tmp, len, string);
 
 			delete[] str;
-			str = new char[len];
-			strcpy_s(str, len, tmp);
-			delete[] tmp;
+			str = tmp;
 		}
 		else
 		{

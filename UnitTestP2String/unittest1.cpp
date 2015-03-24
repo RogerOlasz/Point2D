@@ -20,22 +20,10 @@ namespace UnitTestP2String
 		TEST_METHOD(ConstrChar)
 		{
 			P2String s1("Hola");
-<<<<<<< HEAD
-			char *c2 = "Roger";
-			P2String s2 = c2;
-			char *c3 = NULL;
-			P2String s3 = c3;
-<<<<<<< HEAD
-			P2String s4("%s%d%s", "Tinc", 18, "anys");
-=======
-			P2String s4("%s%d%s", "Tinc ", 18, " anys");
->>>>>>> origin/master
-=======
-			P2String s4("%s %d %s", "Tinc", 18, "anys");
->>>>>>> parent of e7e5705... aa
+			P2String s2("%s%d%s", "Tinc ", 18, " anys");
 
 			Assert::IsTrue(s1 == "Hola");
-			Assert::IsTrue(s4 == "Tinc 18 anys");
+			Assert::IsTrue(s2 == "Tinc 18 anys");
 		}
 		TEST_METHOD(ConstrString)
 		{
