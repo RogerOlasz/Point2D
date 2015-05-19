@@ -14,7 +14,7 @@ private:
 		unsigned int len;
 		char* str;
 
-		void alloc(unsigned int memory_space)
+		void Alloc(unsigned int memory_space)
 		{
 			len = memory_space;
 			str = new char[len];
@@ -25,7 +25,7 @@ public:
 
 	P2String()
 	{
-		alloc(1);
+		Alloc(1);
 		clear();
 		
 	}
@@ -57,13 +57,13 @@ public:
 
 			if (res > 0)
 			{
-				alloc(res + 1);
+				Alloc(res + 1);
 				strcpy_s(str, len, tmp);
 				
 			}
 		if (len == 0)
 		{
-			alloc(1);
+			Alloc(1);
 			clear();
 		}
 
@@ -108,6 +108,76 @@ public:
 		}
 	}
 
+	bool SwapChar(char* c1, char* c2)
+	{
+		int start = 0;
+		int end = -1;
+		int dif = strlen(c2) - strlen(c1);
+		int oldLength = getLength();
+
+		//Find the word
+		for (int i = 0; i < getLength(); i++)
+		{
+			if (str[i] == c1[0])
+			{
+				start = i;
+				if (strlen(c1) == 1)
+				{
+					end = i;
+				}
+					
+				else
+				{
+					for (; str[i + 1] == c1[j], j < strlen(c1); j++, i++)
+					{
+						if (j == strlen(c1) - 1)
+						{
+							end = i + 1;
+						}		
+					}
+				}					
+			}
+		}	
+
+		//Doesn't exist
+		if (end == -1)
+		{
+			return false;
+		}
+			
+		//Resize
+		if (dif > 0)
+		{
+			char* tmp = str;
+
+			Alloc(len + dif);
+			strcpy_s(str, getLength(), tmp);
+
+			for (int i = oldLength; i > end; i--)
+			{
+				str[i + dif] = str[i];
+			}
+				
+		}
+		else
+		{
+			for (int i = end + 1; i < oldLength; i++)
+			{
+				str[i + dif] = str[i];
+			}
+			
+			str[oldLength + dif] = '\0';
+			len += dif;
+		}
+		//Rewrite
+		for (int i = 0; i < strlen(c2); i++)
+		{
+			str[i + start] = c2[i];
+		}
+			
+		return true;
+	}
+
 	bool operator== (const P2String& string) const
 	{
 		return strcmp(str, string.str) == 0;
@@ -147,7 +217,7 @@ public:
 			if (strlen(string) + 1 > len)
 			{
 				delete[] str;
-				alloc(strlen(string) + 1);
+				Alloc(strlen(string) + 1);
 			}
 
 			else
