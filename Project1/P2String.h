@@ -90,6 +90,24 @@ public:
 		return strlen(str);
 	}
 
+	void Trim()
+	{
+		unsigned int size = getLength();
+
+		char* end = str + size;
+		while (*--end == ' ') *end = '\0';
+
+		char* start = str;
+		while (*++start == ' ');
+
+		size = strlen(start);
+
+		for (unsigned int i = 0; i < size + 1; i++)
+		{
+			str[i] = start[i];
+		}
+	}
+
 	bool operator== (const P2String& string) const
 	{
 		return strcmp(str, string.str) == 0;
