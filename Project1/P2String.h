@@ -116,7 +116,7 @@ public:
 		int oldLength = getLength();
 
 		//Find the word
-		for (int i = 0; i < getLength(); i++)
+		for (unsigned int i = 0; i < getLength(); i++)
 		{
 			if (str[i] == c1[0])
 			{
