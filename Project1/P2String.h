@@ -128,7 +128,7 @@ public:
 					
 				else
 				{
-					for (; str[i + 1] == c1[j], j < strlen(c1); j++, i++)
+					for (unsigned int j = 0; str[i + 1] == c1[j], j < strlen(c1); j++, i++)
 					{
 						if (j == strlen(c1) - 1)
 						{
